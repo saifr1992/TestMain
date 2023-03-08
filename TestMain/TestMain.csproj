@@ -18,9 +18,11 @@
   <ItemGroup>
     <None Remove="Entities\" />
     <None Remove="DatabaseContext\" />
+    <None Remove="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="DatabaseContext\" />
+    <Folder Include="Views\Auth\" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,23 @@
+﻿@model SignupViewModel
+
+<form asp-route="Auth-Signup" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" asp-for="Request.Email" placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input type="password" class="form-control" asp-for="Request.Password" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">FullName</label>
+        <input type="text" class="form-control" asp-for="Request.FullName" placeholder="FullName...">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">PhoneNumber</label>
+        <input type="text" class="form-control"asp-for="Request.PhoneNumber" placeholder="Phonenumber...">
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+</form>

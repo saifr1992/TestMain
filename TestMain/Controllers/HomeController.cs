@@ -4,6 +4,7 @@ using TestMain.Models;
 
 namespace TestMain.Controllers;
 
+[Route("Home")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -13,6 +14,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    [HttpGet("", Name = "Home-Index")]
     public IActionResult Index()
     {
         TestClass testClass = new TestClass
@@ -22,6 +24,7 @@ public class HomeController : Controller
         return View(testClass);
     }
 
+    [HttpGet("Privacy", Name = "Home-Privacy")]
     public IActionResult Privacy()
     {
         return View();

@@ -22,18 +22,22 @@ namespace TestMain.Controllers
             _databaseContext = databaseContext;
         }
 
+        //This function only return the View from View folder
         [HttpGet("Signup", Name = "Auth-Signup")]
         public IActionResult Signup()
         {
             return View();
         }
 
+
+        //Submit the form this function is running
         [HttpPost("Signup", Name = "Auth-Signup")]
         public async Task<IActionResult> Signup(SignupRequest request)
         {
-            bool hasEmail = await _databaseContext.Users.AnyAsync(s => s.Email.Equals(request.Email));
+            bool hasEmail = await _databaseContext.Users.AnyAsync(s => s.Email.Equals(request.Email)); // we just check the emial already exist or not.
             if (hasEmail)
             {
+                // retuen to the same view again.
                 Console.WriteLine("Email already exist.");
                 return View();
             }
@@ -47,8 +51,8 @@ namespace TestMain.Controllers
                 PhoneNumber = request.PhoneNumber
             };
             _databaseContext.Users.Add(user);
-            await _databaseContext.SaveChangesAsync();
-            return RedirectToRoute("Home-Index");
+            await _databaseContext.SaveChangesAsync(); // save the data in database 
+            return RedirectToRoute("Home-Index"); // redirect to this route. this route exist in home controller
         }
     }
 }

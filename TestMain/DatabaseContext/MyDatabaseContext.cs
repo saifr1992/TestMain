@@ -9,9 +9,9 @@ namespace TestMain.DatabaseContext
 		public MyDatabaseContext(DbContextOptions<MyDatabaseContext> options) : base(options)
         {}
 
-        public DbSet<UserEntity> Users { get; set; }
-        public DbSet<PostEntity> Posts { get; set; }
-        public DbSet<CommentEntity> Comments { get; set; }
+        public DbSet<UserEntity> Users { get; set; } // Database user table
+        public DbSet<PostEntity> Posts { get; set; } // Database Posts table
+        public DbSet<CommentEntity> Comments { get; set; } // Database Comments table
     }
 }
 

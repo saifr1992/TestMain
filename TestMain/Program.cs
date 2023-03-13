@@ -3,8 +3,8 @@ using TestMain.DatabaseContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connectionString = builder.Configuration.GetConnectionString("TestDbString");
-builder.Services.AddDbContext<MyDatabaseContext>(options => options.UseSqlServer(connectionString));
+string connectionString = builder.Configuration.GetConnectionString("TestDbString"); // Database connection string comming from appsettings.json file.
+builder.Services.AddDbContext<MyDatabaseContext>(options => options.UseSqlServer(connectionString)); // DB context of that connection string.
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
